@@ -1,4 +1,6 @@
-﻿using api_filmes_senai.Repositories;
+﻿using api_filmes_senai.Domains;
+using api_filmes_senai.Interfaces;
+using api_filmes_senai.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +18,7 @@ namespace api_filmes_senai.Controllers
         }
 
         [HttpGet]
-        private IActionResult Get()
+        public IActionResult Get()
         {
             try
             {
@@ -26,6 +28,21 @@ namespace api_filmes_senai.Controllers
             {
 
                 return BadRequest(e.Message);
+            }
+        }
+        [HttpPost]
+        public IActionResult Post(Genero novoGenero)
+        {
+            try
+            {
+                _generoRepository.Cadastrar(novoGenero);
+
+                return Created();
+            }
+            catch (Exception e)
+            {
+
+               return BadRequest(e.Message);
             }
         }
     }

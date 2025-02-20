@@ -1,4 +1,5 @@
 using api_filmes_senai.Context;
+using api_filmes_senai.Interfaces;
 using api_filmes_senai.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 //Adicionar o mapeamento dos controllers
+
 app.MapControllers();
 
 app.Run(); 

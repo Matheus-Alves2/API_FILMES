@@ -6,7 +6,7 @@ namespace api_filmes_senai.Interfaces
     /// Interface para Genero : Contrato
     /// Toda classe  que herdar (implementar) essa interface, devera implementar todos os métodos definidos aqui dentro
     /// </summary>
-    public interface IGeneroRepositorycs
+    public interface IGeneroRepository
     {
         //CRUD : Métodos
         //C : Create : Cadastrar um novo objeto
